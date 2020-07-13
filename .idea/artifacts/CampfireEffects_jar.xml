@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CampfireEffects:jar">
+    <output-path>$PROJECT_DIR$/../../1.16 Server/plugins</output-path>
+    <root id="archive" name="CampfireEffects.jar">
+      <element id="module-output" name="CampfireEffects" />
+    </root>
+  </artifact>
+</component>

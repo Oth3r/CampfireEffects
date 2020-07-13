@@ -1,0 +1,5 @@
+name: CampfireEffects
+version: 1.0
+author: OtherOne
+main: me.otherone.campfire.CampfireEffects
+api-version: 1.16
