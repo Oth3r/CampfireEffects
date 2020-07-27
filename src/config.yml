@@ -1,0 +1,10 @@
+config-verstion: 1.0
+check-ticks:
+campfire:
+  effect:
+  level:
+  radius:
+soul-campfire:
+  effect:
+  level:
+  radius:
