@@ -19,11 +19,11 @@ public class FindCampfire {
 
                 //CAMPFIRE
                 for (int x = campfireRadius; x >= -campfireRadius; x--) {
-                    if (campfireStop == 1) { break; }
+                    if (campfireStop > 0) { break; }
                     for (int y = campfireRadius; y >= -campfireRadius; y--) {
-                        if (campfireStop == 1) { break; }
+                        if (campfireStop > 0) { break; }
                         for (int z = campfireRadius; z >= -campfireRadius; z--) {
-                            if (campfireStop == 1) { break; }
+                            if (campfireStop > 0) { break; }
                             if (middle.getRelative(x, y, z).getType() == Material.CAMPFIRE) {
                                 Utl.addCampfirePlayer(player);
                                 campfireStop++;
@@ -37,11 +37,11 @@ public class FindCampfire {
 
                 //SOUL CAMPFIRE
                 for (int x = soulCampfireRadius; x >= -soulCampfireRadius; x--) {
-                    if (soulCampfireStop == 1) { break; }
+                    if (soulCampfireStop > 0) { break; }
                     for (int y = soulCampfireRadius; y >= -soulCampfireRadius; y--) {
-                        if (soulCampfireStop == 1) { break; }
+                        if (soulCampfireStop > 0) { break; }
                         for (int z = soulCampfireRadius; z >= -soulCampfireRadius; z--) {
-                            if (soulCampfireStop == 1) { break; }
+                            if (soulCampfireStop > 0) { break; }
                             if (middle.getRelative(x, y, z).getType() == Material.SOUL_CAMPFIRE) {
                                 Utl.addSoulCampfirePlayer(player);
                                 soulCampfireStop++;
