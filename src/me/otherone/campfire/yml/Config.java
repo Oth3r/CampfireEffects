@@ -18,7 +18,7 @@ public class Config {
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                //UH-OH
+                System.out.println("Cant create config.yml file.");
             }
         }
         configFile = YamlConfiguration.loadConfiguration(file);
@@ -32,7 +32,7 @@ public class Config {
         try {
             configFile.save(file);
         } catch (IOException e) {
-            System.out.println("Cant save config.yml file for some reason.");
+            System.out.println("Cant save config.yml file.");
         }
     }
 
