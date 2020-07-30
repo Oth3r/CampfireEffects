@@ -5,57 +5,54 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 public class FindCampfire {
 
     public static void run(Plugin plugin) {
-        Bukkit.getScheduler().runTaskTimer(plugin, new Runnable() {
-            @Override
-            public void run() {
-                for (Player player : plugin.getServer().getOnlinePlayers()) {
-                    int radius = 10;
-                    int stop = 0;
-                    int radius2 = 6;
-                    int stop2 = 0;
-                    Block middle = player.getLocation().getBlock();
-                    //CAMPFIRE
-                    for (int x = radius; x >= -radius; x--) {
-                        if (stop == 1) { break; }
-                        for (int y = radius; y >= -radius; y--) {
-                            if (stop == 1) { break; }
-                            for (int z = radius; z >= -radius; z--) {
-                                if (stop == 1) { break; }
-                                if (middle.getRelative(x, y, z).getType() == Material.CAMPFIRE) {
-                                    Utl.addCampfirePlayer(player);
-                                    stop++;
-                                }
+        Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+            for (Player player : plugin.getServer().getOnlinePlayers()) {
+                int campfireRadius = Utl.campfireRadius();
+                int soulCampfireRadius = Utl.soulCampfireRadius();
+                int campfireStop = 0;
+                int soulCampfireStop = 0;
+                Block middle = player.getLocation().getBlock();
+
+                //CAMPFIRE
+                for (int x = campfireRadius; x >= -campfireRadius; x--) {
+                    if (campfireStop == 1) { break; }
+                    for (int y = campfireRadius; y >= -campfireRadius; y--) {
+                        if (campfireStop == 1) { break; }
+                        for (int z = campfireRadius; z >= -campfireRadius; z--) {
+                            if (campfireStop == 1) { break; }
+                            if (middle.getRelative(x, y, z).getType() == Material.CAMPFIRE) {
+                                Utl.addCampfirePlayer(player);
+                                campfireStop++;
                             }
                         }
-                    }
-                    if (stop == 0 && Utl.campfirePlayer(player)) {
-                        Utl.removeCampfirePlayer(player);
-                    }
-                    //SOUL CAMPFIRE
-                    for (int x = radius2; x >= -radius2; x--) {
-                        if (stop2 == 1) { break; }
-                        for (int y = radius2; y >= -radius2; y--) {
-                            if (stop2 == 1) { break; }
-                            for (int z = radius2; z >= -radius2; z--) {
-                                if (stop2 == 1) { break; }
-                                if (middle.getRelative(x, y, z).getType() == Material.SOUL_CAMPFIRE) {
-                                    Utl.addSoulCampfirePlayer(player);
-                                    stop2++;
-                                }
-                            }
-                        }
-                    }
-                    if (stop2 == 0 && Utl.soulCampfirePlayer(player)) {
-                        Utl.removeSoulCampfirePlayer(player);
                     }
                 }
+                if (campfireStop == 0) {
+                    Utl.removeCampfirePlayer(player);
+                }
+
+                //SOUL CAMPFIRE
+                for (int x = soulCampfireRadius; x >= -soulCampfireRadius; x--) {
+                    if (soulCampfireStop == 1) { break; }
+                    for (int y = soulCampfireRadius; y >= -soulCampfireRadius; y--) {
+                        if (soulCampfireStop == 1) { break; }
+                        for (int z = soulCampfireRadius; z >= -soulCampfireRadius; z--) {
+                            if (soulCampfireStop == 1) { break; }
+                            if (middle.getRelative(x, y, z).getType() == Material.SOUL_CAMPFIRE) {
+                                Utl.addSoulCampfirePlayer(player);
+                                soulCampfireStop++;
+                            }
+                        }
+                    }
+                }
+                if (soulCampfireStop == 0) {
+                    Utl.removeSoulCampfirePlayer(player);
+                }
             }
-        }, 0L, 20);
+        }, 0L, Utl.checkTicks());
     }
 }

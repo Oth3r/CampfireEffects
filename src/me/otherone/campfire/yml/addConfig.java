@@ -12,7 +12,13 @@ public class addConfig {
             Config.get().set("soul-campfire.effect", "DAMAGE_RESISTANCE");
             Config.get().set("soul-campfire.level", 1);
             Config.get().set("soul-campfire.radius", 10);
-            Config.save();
         }
+        if (Config.get().getString("campfire.effect") == null) {
+            Config.get().set("campfire.effect", "REGENERATION");
+        }
+        if (Config.get().getString("soul-campfire.effect") == null) {
+            Config.get().set("soul-campfire.effect", "DAMAGE_RESISTANCE");
+        }
+        Config.save();
     }
 }

@@ -27,5 +27,4 @@ public class CampfireEffects extends JavaPlugin {
         if (Config.get().getString("soulcampfire-players") != null)
             Config.get().set("soulcampfire-players", null);
     }
-
 }

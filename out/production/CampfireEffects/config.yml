@@ -1,10 +1,10 @@
 config-verstion: 1.0
 check-ticks:
 campfire:
-  effect: REGENERATION
-  level: 1
-  radius: 10
+  effect:
+  level:
+  radius:
 soul-campfire:
-  effect: DAMAGE_RESISTANCE
-  level: 1
-  radius: 6
+  effect:
+  level:
+  radius:
