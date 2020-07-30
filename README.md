@@ -3,7 +3,8 @@
 Get effects while near campfires.
 
 ## Config
->config-version: 1.0
+>config-version:
+Current config version, dont change.
 
 >check-ticks: 20
 
