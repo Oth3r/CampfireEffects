@@ -2,6 +2,7 @@ package me.otherone.campfire;
 
 import me.otherone.campfire.yml.Config;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
@@ -30,25 +31,29 @@ public class Utl {
         if (!(campfirePlayer(player))) {
             CampfirePlayers.add(player.getName());
             Config.get().set("campfire-players", CampfirePlayers);
+            player.addPotionEffect(new PotionEffect(campfireEffect(), 999999999, campfireEffectLevel()));
         }
     }
 
     public static void removeCampfirePlayer(Player player) {
+        if (campfirePlayer(player))
+            player.removePotionEffect(campfireEffect());
         CampfirePlayers.remove(player.getName());
         Config.get().set("campfire-players", CampfirePlayers);
+
     }
 
-    private static List<String> SoulCampfirePlayers = Config.get().getStringList("campfire-players");
+    private static List<String> SoulCampfirePlayers = Config.get().getStringList("soulcampfire-players");
 
     private static List<String> soulCampfire() {
-        if (CampfirePlayers == null) {
+        if (SoulCampfirePlayers == null) {
             return new ArrayList<>();
         }
-        return CampfirePlayers;
+        return SoulCampfirePlayers;
     }
 
     public static boolean soulCampfirePlayer(Player player) {
-        if (campfire().contains(player.getName())) {
+        if (soulCampfire().contains(player.getName())) {
             return true;
         } else {
             return false;
@@ -56,18 +61,19 @@ public class Utl {
     }
 
     public static void addSoulCampfirePlayer(Player player) {
-        if (!(campfirePlayer(player))) {
-            CampfirePlayers.add(player.getName());
-            Config.get().set("campfire-players", CampfirePlayers);
+        if (!(soulCampfirePlayer(player))) {
+            SoulCampfirePlayers.add(player.getName());
+            Config.get().set("soulcampfire-players", SoulCampfirePlayers);
+            player.addPotionEffect(new PotionEffect(soulCampfireEffect(), 999999999, soulCampfireEffectLevel()));
         }
     }
 
     public static void removeSoulCampfirePlayer(Player player) {
-        CampfirePlayers.remove(player.getName());
-        Config.get().set("campfire-players", CampfirePlayers);
+        if (soulCampfirePlayer(player))
+            player.removePotionEffect(soulCampfireEffect());
+        SoulCampfirePlayers.remove(player.getName());
+        Config.get().set("soulcampfire-players", SoulCampfirePlayers);
     }
-
-
 
     public static int effectTicks() {
         return Config.get().getInt("check-ticks");
