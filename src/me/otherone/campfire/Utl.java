@@ -1,6 +1,7 @@
 package me.otherone.campfire;
 
 import me.otherone.campfire.yml.Config;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -10,12 +11,28 @@ import java.util.List;
 
 public class Utl {
 
+    public static String addColor(final String string) {
+        return org.bukkit.ChatColor.translateAlternateColorCodes('&', string);
+    }
+
     public static int checkTicks() {
         return Math.max(Config.get().getInt("check-ticks"), 1);
     }
 
     private static List<String> CampfirePlayers = Config.get().getStringList("campfire-players");
     private static List<String> SoulCampfirePlayers = Config.get().getStringList("soul-campfire-players");
+
+    //REMOVE ALL
+    public static void removeAll() {
+        for (Player player: Bukkit.getOnlinePlayers()) {
+            Utl.removeCampfirePlayer(player);
+            Utl.removeSoulCampfirePlayer(player);
+        }
+        if (Config.get().getString("campfire-players") != null)
+            Config.get().set("campfire-players", null);
+        if (Config.get().getString("soulcampfire-players") != null)
+            Config.get().set("soulcampfire-players", null);
+    }
 
     //GET PLAYER LIST
     private static List<String> campfire() {
