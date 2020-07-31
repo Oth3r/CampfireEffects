@@ -3,23 +3,20 @@
 Get effects while near campfires.
 
 ## Config
->config-version:
-Current config version, dont change.
+>config-version: \
+*Shows current config version, dont change.*
 
->check-ticks: 20
+>check-ticks: \
+*Sets how many ticks between each check for a campfire*
 
->campfire:
+###### campfire:
+  > effect: \
+  *Sets the potion effect for the campfire*
+  > level: 1\
+  *
+  > radius: 10
 
->  effect: REGENERATION
-
->  level: 1
-
->  radius: 10
-
->soul-campfire:
-
->  effect: DAMAGE_RESISTANCE
-
->  level: 1
-
->  radius: 6
+>soul-campfire:\
+>  effect: DAMAGE_RESISTANCE\
+>  level: 1\
+>  radius: 6\
