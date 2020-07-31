@@ -3,20 +3,30 @@
 Get effects while near campfires.
 
 ## Config
->config-version: \
-*Shows current config version, dont change.*
+config-version: \
+  *Shows current config version, do not edit.*
 
->check-ticks: \
+check-ticks: \
 *Sets how many ticks between each check for a campfire*
 
-###### campfire:
-  > effect: \
-  *Sets the potion effect for the campfire*
-  > level: 1\
-  *
-  > radius: 10
+campfire:
+ - effect: \
+  *Sets the potion effect for the campfire*\
+  *Default: REGENERATION*
+ - level: \
+  *Sets the potion effect level*\
+  *Default: 1*
+ - radius: \
+  *Sets the raidus for the campfire effect*\
+  *Default: 10*
 
->soul-campfire:\
->  effect: DAMAGE_RESISTANCE\
->  level: 1\
->  radius: 6\
+soul-campfire:
+ - effect: \
+  *Sets the potion effect for the soul campfire*
+  *Default: DAMAGE_RESISTANCE*
+ - level: \
+  *Sets the potion effect level*
+  *Default: 1*
+ - radius: \
+  *Sets the radius for the soul campfire effect*
+  *Default: 6*
