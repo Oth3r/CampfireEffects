@@ -7,7 +7,8 @@ config-version: \
   *Shows current config version, do not edit.*
 
 check-ticks: \
-*Sets how many ticks between each check for a campfire*
+*Sets how many ticks between each check for a campfire*\
+*Default: 20*
 
 campfire:
  - effect: \
