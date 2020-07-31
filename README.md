@@ -22,11 +22,11 @@ campfire:
 
 soul-campfire:
  - effect: \
-  *Sets the potion effect for the soul campfire*
+  *Sets the potion effect for the soul campfire*\
   *Default: DAMAGE_RESISTANCE*
  - level: \
-  *Sets the potion effect level*
+  *Sets the potion effect level*\
   *Default: 1*
  - radius: \
-  *Sets the radius for the soul campfire effect*
+  *Sets the radius for the soul campfire effect*\
   *Default: 6*
