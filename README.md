@@ -1,6 +1,6 @@
 # CampfireEffects
 
-Get effects while near campfires.
+Get potion effects while near campfires.
 
 ## Config
 config-version: \
