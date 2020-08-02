@@ -23,4 +23,7 @@ public class CampfireEffects extends JavaPlugin {
     public void onDisable() {
         Utl.removeAll();
     }
+
+    //FIX DEATH RESETTING EFFECTS
+    //ADD BETTER EFFECTS NAMES
 }
