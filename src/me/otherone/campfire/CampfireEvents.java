@@ -1,10 +1,13 @@
 package me.otherone.campfire;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class CampfireEvents implements Listener {
 
@@ -20,5 +23,14 @@ public class CampfireEvents implements Listener {
         Player player = event.getEntity();
         Utl.removeCampfirePlayer(player);
         Utl.removeSoulCampfirePlayer(player);
+    }
+
+    @EventHandler
+    public static void playerDrinkMilk(PlayerItemConsumeEvent event) {
+        if (event.getItem().getType().equals(Material.MILK_BUCKET)) {
+            Player player = event.getPlayer();
+            Utl.removeCampfirePlayer(player);
+            Utl.removeSoulCampfirePlayer(player);
+        }
     }
 }
