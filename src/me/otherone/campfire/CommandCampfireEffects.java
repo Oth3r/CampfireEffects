@@ -1,6 +1,7 @@
 package me.otherone.campfire;
 
 import me.otherone.campfire.yml.Config;
+import me.otherone.campfire.yml.addConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,6 +24,7 @@ public class CommandCampfireEffects implements CommandExecutor, TabCompleter {
             if (args[0].equalsIgnoreCase("reload")) {
                 Utl.removeAll();
                 Config.reload();
+                addConfig.start();
                 System.out.println("[CampfireEffects] Reloaded Config.");
             }
             return true;
@@ -36,6 +38,7 @@ public class CommandCampfireEffects implements CommandExecutor, TabCompleter {
             if (!(player.hasPermission("campfireeffects.reload"))) { player.sendMessage(Utl.addColor("&cYou do not have permission to use this command!")); return true; }
             Utl.removeAll();
             Config.reload();
+            addConfig.start();
             player.sendMessage(Utl.addColor("&aReloaded Config!"));
         }
         return true;
