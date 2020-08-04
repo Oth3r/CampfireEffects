@@ -10,18 +10,18 @@ config-version: \
 check-ticks: 20\
     *Set how many ticks between each check for a campfire*
 
-#####campfire:
+##### campfire:
 effect: regeneration\
 level: 1\
 radius: 10
 
-#####soul-campfire:
+##### soul-campfire:
 effect: resistance\
 level: 1\
 radius: 6
 
-####Campfire info:
-#####effect:
+#### Campfire info:
+##### effect:
 Set the potion effect the player will get when standing near a campfire.\
 All effect names:\
 *speed, slowness, haste, mining_fatigue, strength, instant_health, instant_damage, 
@@ -30,10 +30,10 @@ invisibility, blindness, night_vision, hunger, weakness, poison, wither, health_
 absorption, saturation, glowing, levitation, luck, unluck, slow_falling, conduit_power, 
 dolphins_grace, bad_omen, hero_of_the_village*
 
-#####level:
+##### level:
 Set the potion effect level.\
 *Level is not the same as effect amplifier.\
 1 level = 1 effect level.*
 
-#####radius:
+##### radius:
 Set the radius for getting the effect. *(In blocks)*
