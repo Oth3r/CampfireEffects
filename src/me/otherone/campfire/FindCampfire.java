@@ -3,6 +3,9 @@ package me.otherone.campfire;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.data.BlockData;
+import org.bukkit.block.data.Lightable;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -25,8 +28,11 @@ public class FindCampfire {
                         for (int z = campfireRadius; z >= -campfireRadius; z--) {
                             if (campfireStop > 0) { break; }
                             if (middle.getRelative(x, y, z).getType() == Material.CAMPFIRE) {
-                                Utl.addCampfirePlayer(player);
-                                campfireStop++;
+                                Lightable light = (Lightable) middle.getRelative(x, y, z).getBlockData();
+                                if (light.isLit()) {
+                                    Utl.addCampfirePlayer(player);
+                                    campfireStop++;
+                                }
                             }
                         }
                     }
@@ -43,8 +49,11 @@ public class FindCampfire {
                         for (int z = soulCampfireRadius; z >= -soulCampfireRadius; z--) {
                             if (soulCampfireStop > 0) { break; }
                             if (middle.getRelative(x, y, z).getType() == Material.SOUL_CAMPFIRE) {
-                                Utl.addSoulCampfirePlayer(player);
-                                soulCampfireStop++;
+                                Lightable light = (Lightable) middle.getRelative(x, y, z).getBlockData();
+                                if (light.isLit()) {
+                                    Utl.addSoulCampfirePlayer(player);
+                                    soulCampfireStop++;
+                                }
                             }
                         }
                     }
