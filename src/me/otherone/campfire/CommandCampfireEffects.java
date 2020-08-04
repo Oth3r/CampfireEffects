@@ -15,7 +15,18 @@ public class CommandCampfireEffects implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (!(sender instanceof Player)) { return true; }
+        if (!(sender instanceof Player)) {
+            if (args.length == 0) {
+                System.out.println("[CampfireEffects] Usage: /campfireeffects reload");
+                return true;
+            }
+            if (args[0].equalsIgnoreCase("reload")) {
+                Utl.removeAll();
+                Config.reload();
+                System.out.println("[CampfireEffects] Reloaded Config.");
+            }
+            return true;
+        }
         Player player = (Player) sender;
         if (args.length == 0) {
             player.sendMessage(Utl.addColor("&cUsage: &f/campfireeffects reload"));
