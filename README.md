@@ -8,7 +8,7 @@ config-version: \
   *Shows current config version, do not edit.*
 
 check-ticks: 20\
-    *Sets how many ticks between each check for a campfire*
+    *Set how many ticks between each check for a campfire*
 
 #####campfire:
 effect: regeneration\
