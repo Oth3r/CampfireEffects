@@ -1,6 +1,7 @@
 # CampfireEffects
 
-Get potion effects while near campfires.
+Get potion effects while near campfires.\
+Fully customizable via config.
 
 ## Config
 config-version: \
@@ -19,10 +20,10 @@ effect: resistance\
 level: 1\
 radius: 6
 
-&nbsp;
-
+####Campfire info:
 #####effect:
-all effects:\
+Set the potion effect the player will get when standing near a campfire.\
+All effect names:\
 *speed, slowness, haste, mining_fatigue, strength, instant_health, instant_damage, 
 jump_boost, nausea, regeneration, resistance, fire_resistance, water_breathing, 
 invisibility, blindness, night_vision, hunger, weakness, poison, wither, health_boost, 
@@ -30,8 +31,9 @@ absorption, saturation, glowing, levitation, luck, unluck, slow_falling, conduit
 dolphins_grace, bad_omen, hero_of_the_village*
 
 #####level:
-level is not the same as effect amplifier.\
-1 level = 1 effect level.
+Set the potion effect level.\
+*Level is not the same as effect amplifier.\
+1 level = 1 effect level.*
 
 #####radius:
-sets the radius for the campfire effect.
+Set the radius for getting the effect. *(In blocks)*
