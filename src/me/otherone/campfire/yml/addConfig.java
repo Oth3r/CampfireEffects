@@ -11,10 +11,10 @@ public class addConfig {
                     "fire_resistance, water_breathing, invisibility, blindness, night_vision, hunger, " +
                     "weakness, poison, wither, health_boost, absorption, saturation, glowing, levitation, " +
                     "luck, unluck, slow_falling, conduit_power, dolphins_grace, bad_omen, hero_of_the_village");
-            Config.get().set("campfire.effect", "REGENERATION");
+            Config.get().set("campfire.effect", "regeneration");
             Config.get().set("campfire.level", 1);
             Config.get().set("campfire.radius", 10);
-            Config.get().set("soul-campfire.effect", "DAMAGE_RESISTANCE");
+            Config.get().set("soul-campfire.effect", "resistance");
             Config.get().set("soul-campfire.level", 1);
             Config.get().set("soul-campfire.radius", 6);
         }
